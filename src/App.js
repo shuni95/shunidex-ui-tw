@@ -10,10 +10,10 @@ function App() {
       <h1 className="text-4xl text-emerald-700 text-center font-semibold">Shunidex</h1>
       
       <div className="flex justify-center mt-2">
-          <input className="w-40 placeholder:italic placeholder:text-gray-400 bg-white border-2 rounded border-solid border-emerald-800 p-2 focus:border-emerald-400 focus:ring-emerald-600 focus:ring-1 focus:outline-none" 
+          <input className="w-60 placeholder:italic placeholder:text-gray-400 bg-white border-2 rounded border-solid border-emerald-800 p-2 focus:border-emerald-400 focus:ring-emerald-600 focus:ring-1 focus:outline-none sm:w-80" 
             type="text" placeholder="ex. Pikachu"/>
       </div>
-      <div className="flex flex-col mt-4">
+      <div className="flex flex-col md:items-center mt-4">
         <FrequentSearch title="Favorites"/>
         <FrequentSearch title="Most wanted"/>
         <FrequentSearch title="Meta 2v2"/>
