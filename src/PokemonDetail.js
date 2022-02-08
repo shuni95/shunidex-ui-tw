@@ -14,7 +14,7 @@ function PokemonDetail() {
                         <h1 className="text-3xl">{ params.name }</h1>
                     </div>
                     <div className="flex mt-2">
-                        <img src="/sprites/Zorua.png"/>
+                        <img src="/sprites/Zorua.png" alt="Zorua"/>
                     </div>
                     <div className="flex justify-center mt-2">
                         <span className="p-1 px-3 rounded-3xl leading-6 bg-gray-500 text-white uppercase text-sm font-sem">Normal</span><span className="p-1 px-3 rounded-3xl bg-purple-900 text-white uppercase text-sm leading-6">Fantasma</span>
