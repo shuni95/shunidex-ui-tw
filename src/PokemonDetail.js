@@ -1,7 +1,23 @@
 import { useParams } from "react-router-dom";
+import { useState } from 'react';
 
 function PokemonDetail() {
     const params = useParams();
+    const [effect, setEffect] = useState(false);
+
+    const evolutionButtonHandler = (e) => {
+        e.preventDefault();
+        // Fire animation
+        setEffect(true);
+        console.info("xd");
+    }
+
+    const animationEndsHandler = (e) => {
+        setEffect(false);
+
+        document.getElementById('image').src = '/sprites/Zoroark.png';
+    }
+
 
     return (
         <section className="flex flex-col">
@@ -13,8 +29,10 @@ function PokemonDetail() {
                     <div className="flex justify-center">
                         <h1 className="text-3xl">{ params.name }</h1>
                     </div>
-                    <div className="flex mt-2">
-                        <img src="/sprites/Zorua.png" alt="Zorua"/>
+                    <div className="flex relative items-end mt-2">
+                        <img id="image" className={effect ? 'animate-evolution' : ''} src="/sprites/Zorua.png" alt="Zorua" onAnimationEnd={animationEndsHandler}/>
+                        <img className="hidden" src="/sprites/Zoroark.png" alt="Zoroark"/>
+                        <button className="bg-red-500 bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm" onClick={evolutionButtonHandler}>Lvl 30</button>
                     </div>
                     <div className="flex justify-center mt-2">
                         <span className="p-1 px-3 rounded-3xl leading-6 bg-gray-500 text-white uppercase text-sm font-sem">Normal</span><span className="p-1 px-3 rounded-3xl bg-purple-900 text-white uppercase text-sm leading-6">Fantasma</span>
@@ -33,7 +51,7 @@ function PokemonDetail() {
                     </ul>
                     <h2>Alimentos preferidos</h2>
                     <ul>
-                        <li></li>
+                        <li>sss</li>
                     </ul>
                 </div>
             </div>
