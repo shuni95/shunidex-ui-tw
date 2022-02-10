@@ -4,55 +4,33 @@ module.exports = {
   ],
   safelist: [
     'animate-evolution',
+    'animate-appear',
   ],
   theme: {
     extend: {
       animation: {
-        evolution: 'evolution 3s ease-in-out'
+        evolution: 'evolution 2s ease-in-out',
+        appear: 'appear 1s ease-in-out',
       },
 
       keyframes: {
-        // wiggle: {
-        //   '0%, 100%': { transform: 'rotate(-3deg)' },
-        //   '50%': { transform: 'rotate(3deg)' },
-        // }
+        appear: {
+          '0%': { transform: 'scale(0.2)' },
+          '50%': { transform: 'scale(0.6)' },
+          '100%': { transform: 'scale(1)' }
+        },
         evolution: {
-          '0%': {
-            transform: 'scale(1)'
-          },
-          '10%': {
-            transform: 'scale(1.2)'
-          },
-          '20%': {
-            transform: 'scale(0.8)'
-          },
-          '30%': {
-            transform: 'scale(1.2)'
-          },
-          '40%': {
-            transform: 'scale(0.8)'
-          },
-          '50%': {
-            transform: 'scale(1.2)'
-          },
-          '60%': {
-            transform: 'scale(1.4)'
-          },
-          '70%': {
-            transform: 'scale(0.8)',
-            filter: 'blur(3px)',
-            filter: 'grayscale(1)'
-          },
-          '80%': {
-            transform: 'scale(0.4)',
-          },
-          '90%': {
-            transform: 'scale(0.2)'
-          },
-          '100%': {
-            filter: 'blur(0px)',
-            filter: 'grayscale(0)'
-          }
+          '0%': { transform: 'scale(1)' },
+          '10%': { transform: 'scale(1.2)' },
+          '20%': { transform: 'scale(0.8)' },
+          '30%': { transform: 'scale(1.2)' },
+          '40%': { transform: 'scale(0.8)' },
+          '50%': { transform: 'scale(1.2)' },
+          '60%': { transform: 'scale(1.4)' },
+          '70%': { transform: 'scale(1)', filter: 'blur(3px) grayscale(1)' },
+          '80%': { transform: 'scale(0.6)' },
+          '90%': { transform: 'scale(0.3)' },
+          '100%': { transform: 'scale(0.1)', filter: 'blur(3px) grayscale(0)' }
         }
       }
     },
