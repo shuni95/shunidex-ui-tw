@@ -12,7 +12,7 @@ function EvolutionButton(props) {
     }
 
     return (
-        <button className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>{props.text}</button>
+        <button className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>{props.text}</button>
     )
 }
 
@@ -23,7 +23,7 @@ function PreEvolutionButton(props) {
     }
 
     return (
-        <button className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={preEvolutionButtonHandler}>{'<--'}</button>
+        <button className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={preEvolutionButtonHandler}>{'<--'}</button>
     )
 }
 
@@ -61,8 +61,8 @@ function PokemonDetail() {
                         <h1 className="text-3xl font-bold">{ pkmn.name }</h1>
                     </div>
                     <div className="flex relative justify-center items-end mt-2">
-                        <img id="image" className={effect} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
-                        <div className="flex flex-col space-y-2">
+                        <img id="image" className={effect + ' m-auto'} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
+                        <div className="flex flex-col space-y-2 w-0">
                         {pkmn.evolutions ? pkmn.evolutions.map(evolution => (
                             <EvolutionButton onSetEffect={setEffect} text={evolution.text}/>
                         )): ''}
@@ -86,34 +86,50 @@ function PokemonDetail() {
                 <p className="text-xs z-10 font-[Merienda]">«{pkmn.description}»</p>
             </div>
 
-            <div className="flex flex-row">
-                <div className="flex flex-col pl-4 basis-1/2">
-                    <h2 className="font-semibold mb-2">Fuerte (x2)</h2>
+            <div className='flex flex-row mt-2'>
+                <div className='flex flex-col pl-4 basis-full'>
+                    <h2 className='font-bold mb-2'>Ubicaciones</h2>
+                    <ul className='list-none space-y-2'>
+                        {pkmn.locations ? pkmn.locations.map(location => (
+                            <li className='text-sm'>
+                                <span className='font-semibold'>{location.section}</span>: 
+                                <span>{location.zones.join(', ')}</span>
+                                </li>
+                        )): ''}
+                    </ul>
+                </div>
+            </div>
+
+            <div className="flex flex-row mt-2">
+                <div className="flex flex-col basis-1/2 items-center">
+                    <h2 className="font-bold mb-2">Fuerte (x2)</h2>
                     <ul className="list-none">
                         <li><PokemonType type="ghost"/></li>
                     </ul>
                 </div>
-                <div className="flex flex-col basis-1/2">
-                    <h2 className="font-semibold mb-2">Débil (x2)</h2>
+                <div className="flex flex-col basis-1/2 items-center">
+                    <h2 className="font-bold mb-2">Débil (x2)</h2>
                     <ul className="list-none space-y-2">
-                        <li><PokemonType type="ghost"/></li>
                         <li><PokemonType type='dark'/></li>
                     </ul>
                 </div>
             </div>
+
             <div className="flex flex-row mt-2">
-                <div className="flex flex-col pl-4 basis-1/2">
-                    <h2 className="font-semibold">Objetos:</h2>
-                    <ul className="list-none">
+                <div className="flex flex-col basis-1/2 items-center">
+                    <h2 className="font-bold">Objetos</h2>
+                    <ul className="list-none text-center">
                         {pkmn.items ? pkmn.items.map(item => (
                             <li className="text-sm">{item}</li>
                         )) : ''}
                     </ul>
                 </div>
-                <div className="flex flex-col basis-1/2">
-                    <h2 className="font-semibold">Alimentos preferidos</h2>
-                    <ul className="list-none">
-                        <li className="text-sm">sss</li>
+                <div className="flex flex-col basis-1/2 items-center">
+                    <h2 className="font-bold">Alimento preferido</h2>
+                    <ul className="list-none text-center">
+                        {pkmn.meals ? pkmn.meals.map(item => (
+                            <li className="text-sm">{item}</li>
+                        )) : ''}
                     </ul>
                 </div>
             </div>

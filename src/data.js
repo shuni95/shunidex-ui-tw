@@ -20,6 +20,12 @@ export const PokedexData = {
         ],
         'meals': [
             ''
+        ],
+        'locations': [
+            {
+                'section': 'Tundra Alba',
+                'zones': ['Páramo Algente']
+            }
         ]
     },
     'Zoroark': {
