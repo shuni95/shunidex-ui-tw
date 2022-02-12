@@ -33,9 +33,6 @@ function PokemonDetail() {
     const [pkmn, setPkmn] = useState({});
 
     useEffect(() => {
-        // TODO: Add component for Pokemon to manage evolution
-        // TODO: Update pokemon data after evolution
-
         setPkmn(PokedexData[params.name]);
     }, [])
 
