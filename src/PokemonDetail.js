@@ -3,29 +3,56 @@ import { useEffect, useState } from 'react';
 import { PokedexData } from './data';
 import PokemonType from "./PokemonType";
 
+
+function EvolutionButton(props) {
+
+    const evolutionButtonHandler = (e) => {
+        e.preventDefault();
+        props.onSetEffect('animate-evolution');
+    }
+
+    return (
+        <button className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>{props.text}</button>
+    )
+}
+
+function PreEvolutionButton(props) {
+    const preEvolutionButtonHandler = (e) => {
+        e.preventDefault();
+        props.onSetEffect('animate-preevolution');
+    }
+
+    return (
+        <button className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={preEvolutionButtonHandler}>{'<--'}</button>
+    )
+}
+
 function PokemonDetail() {
     const params = useParams();
     const [effect, setEffect] = useState('');
     const [pkmn, setPkmn] = useState({});
 
     useEffect(() => {
-        console.info(params.name);
-        // TODO: Add component for pokemon type
         // TODO: Add component for Pokemon to manage evolution
         // TODO: Update pokemon data after evolution
 
         setPkmn(PokedexData[params.name]);
     }, [])
 
-    const evolutionButtonHandler = (e) => {
-        e.preventDefault();
-        setEffect('animate-evolution');
-    }
 
     const animationEndsHandler = (e) => {
-        setEffect('animate-appear');
-
-        document.getElementById('image').src = '/sprites/Zoroark.png';
+        switch (e.animationName) {
+            case 'evolution':
+                setEffect('animate-appear');
+                setPkmn(PokedexData[pkmn.evolutions[0].evolution]);
+                break;
+            case 'appear':
+                break;
+            case 'preevolution':
+                setEffect('animate-appear');
+                setPkmn(PokedexData[pkmn.preEvolution]);
+                break;
+        }
     }
 
 
@@ -34,17 +61,23 @@ function PokemonDetail() {
             <div className="flex flex-row">
                 <div className="flex flex-col w-full">
                     <div className="flex justify-center">
-                        <h1 className="text-3xl font-bold">{ params.name }</h1>
+                        <h1 className="text-3xl font-bold">{ pkmn.name }</h1>
                     </div>
                     <div className="flex relative justify-center items-end mt-2">
-                        <img id="image" className={effect} src="/sprites/Zorua.png" alt="Zorua" onAnimationEnd={animationEndsHandler}/>
+                        <img id="image" className={effect} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
                         <div className="flex flex-col space-y-2">
-                        <button className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>Lvl 30</button>
+                        {pkmn.evolutions ? pkmn.evolutions.map(evolution => (
+                            <EvolutionButton onSetEffect={setEffect} text={evolution.text}/>
+                        )): ''}
+                        {pkmn.preEvolution ? (
+                            <PreEvolutionButton onSetEffect={setEffect}/>
+                        ): ''}
                         </div>
                     </div>
                     <div className="flex justify-center mt-2">
-                        <PokemonType type="normal"/>
-                        <PokemonType type="ghost"/>
+                        {pkmn.types ? pkmn.types.map(type => (
+                            <PokemonType type={type}/>
+                        )): ''}
                     </div>
                     <div className="flex justify-center mb-2">
                         <span className="text-sm italic">{ pkmn.title }</span>

@@ -2,14 +2,17 @@ export const PokedexData = {
     'Zorua': {
         'name': 'Zorua',
         'title': 'Pokémon Zorro Rencor',
+        'imageSrc': '/sprites/Zorua.png',
         'description': 'Es un alma difunta resucitada en Hisui que transforma su rencor en energía. Esta surge de su cabeza y adopta la forma de su oponente, disipando asi su inquina.',
-        'evolutions': {
-            'text': 'Lvl 30',
-            'evolution': 'Zoroark'
-        },
+        'evolutions': [
+            {
+                'text': 'Lvl 30',
+                'evolution': 'Zoroark'
+            }
+        ],
         'types': [
-            'Normal',
-            'Fantasma'
+            'normal',
+            'ghost'
         ],
         'items': [
             'Baya Lupu',
@@ -21,7 +24,14 @@ export const PokedexData = {
     },
     'Zoroark': {
         'name': 'Zoroark',
+        'title': 'Zorro []',
         'description': 'Pendiente',
-        'evolutions': []
+        'imageSrc': '/sprites/Zoroark.png',
+        'evolutions': [],
+        'types': [
+            'normal',
+            'ghost'
+        ],
+        'preEvolution': 'Zorua',
     }
 }

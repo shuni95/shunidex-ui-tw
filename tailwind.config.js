@@ -19,6 +19,7 @@ module.exports = {
       animation: {
         evolution: 'evolution 2s ease-in-out',
         appear: 'appear 1s ease-in-out',
+        preevolution: 'preevolution 1s ease-in-out',
       },
 
       keyframes: {
@@ -26,6 +27,11 @@ module.exports = {
           '0%': { transform: 'scale(0.2)' },
           '50%': { transform: 'scale(0.6)' },
           '100%': { transform: 'scale(1)' }
+        },
+        preevolution: {
+          '0%': { transform: 'scale(1)', filter: 'sepia(0.2)' },
+          '50%': { transform: 'scale(0.6)', filter: 'sepia(0.6)' },
+          '100%': { transform: 'scale(0.2)', filter: 'sepia(1)' }
         },
         evolution: {
           '0%': { transform: 'scale(1)' },
