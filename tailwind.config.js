@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'papyrus': '2px 3px 10px gray, 0 0 20px #8a4d0f inset',
+      },
+
       animation: {
         evolution: 'evolution 2s ease-in-out',
         appear: 'appear 1s ease-in-out',
