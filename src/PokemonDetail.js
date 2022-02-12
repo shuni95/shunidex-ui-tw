@@ -31,16 +31,20 @@ function PokemonDetail() {
     return (
         <section className="flex flex-col">
             <div className="flex flex-row">
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full">
                     <div className="flex justify-center">
-                        <h1 className="text-3xl">{ params.name }</h1>
+                        <h1 className="text-3xl font-bold">{ params.name }</h1>
                     </div>
-                    <div className="flex relative items-end mt-2">
+                    <div className="flex relative justify-center items-end mt-2">
                         <img id="image" className={effect} src="/sprites/Zorua.png" alt="Zorua" onAnimationEnd={animationEndsHandler}/>
-                        <button className="bg-red-500 bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm" onClick={evolutionButtonHandler}>Lvl 30</button>
+                        <div className="flex flex-col space-y-2">
+                        <button className="bg-red-500 bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>Lvl 30</button>
+                        <button className="bg-red-500 bg-opacity-75 rounded-lg p-1 relative right-16 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={evolutionButtonHandler}>Lvl 30</button>
+                        </div>
                     </div>
                     <div className="flex justify-center mt-2">
-                        <span className="p-1 px-3 rounded-3xl leading-6 bg-gray-500 text-white uppercase text-sm font-sem">Normal</span><span className="p-1 px-3 rounded-3xl bg-purple-900 text-white uppercase text-sm leading-6">Fantasma</span>
+                        <span className="p-1 px-3 rounded-3xl leading-6 bg-gray-500 text-white lowercase text-sm font-['Open_Sans'] italic">Normal</span>
+                        <span className="p-1 px-3 rounded-3xl leading-6 bg-purple-900 text-white lowercase text-sm font-['Open_Sans'] italic">Fantasma</span>
                     </div>
                     <div className="flex justify-center mb-2">
                         <span className="text-sm italic">{ pkmn.title }</span>
@@ -48,8 +52,8 @@ function PokemonDetail() {
                 </div>
             </div>
             <div className="flex flex-row p-2 pl-4 items-center">
-                <div style={{filter: 'url(/filter.svg#waves)'}} className='shadow-papyrus absolute h-28 left-[5px] right-[10px] bg-[#faebd7]'></div>
-                <p className="text-sm z-10">«{pkmn.description}»</p>
+                <div style={{filter: 'url(/filter.svg#waves)'}} className='shadow-papyrus absolute h-20 left-[5px] right-[10px] bg-[#faebd7]'></div>
+                <p className="text-xs z-10 font-[Merienda]">«{pkmn.description}»</p>
             </div>
 
             <div className="flex flex-row">
