@@ -1,5 +1,5 @@
 export const PokedexData = {
-    'Zorua': {
+    'zorua': {
         'name': 'Zorua',
         'title': 'Pokémon Zorro Rencor',
         'imageSrc': '/sprites/Zorua.png',
@@ -28,7 +28,7 @@ export const PokedexData = {
             }
         ]
     },
-    'Zoroark': {
+    'zoroark': {
         'name': 'Zoroark',
         'title': 'Zorro []',
         'description': 'Pendiente',
@@ -38,6 +38,6 @@ export const PokedexData = {
             'normal',
             'ghost'
         ],
-        'preEvolution': 'Zorua',
+        'preEvolution': 'zorua',
     }
 }

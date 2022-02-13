@@ -1,6 +1,22 @@
+import { useNavigate } from "react-router-dom";
 import { FrequentSearch } from "./FrequentSearch";
+import { PokedexData } from "./data";
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      const pkmnSearched = document.getElementById('search').value.toLowerCase();
+
+      if (PokedexData[pkmnSearched]) {
+        navigate('/pkmn/' + pkmnSearched);
+      } else {
+        alert('Pokemon no encontrado 😢');
+      }
+    }
+  };
 
   return (
     <div>
@@ -10,8 +26,8 @@ function App() {
       <h1 className="text-4xl text-emerald-700 text-center font-semibold">Shunidex</h1>
       
       <div className="flex justify-center mt-2">
-          <input className="w-60 placeholder:italic placeholder:text-gray-400 bg-white border-2 rounded border-solid border-emerald-800 p-2 focus:border-emerald-400 focus:ring-emerald-600 focus:ring-1 focus:outline-none md:w-80" 
-            type="text" placeholder="ex. Pikachu"/>
+          <input id="search" className="w-60 placeholder:italic placeholder:text-gray-400 bg-white border-2 rounded border-solid border-emerald-800 p-2 focus:border-emerald-400 focus:ring-emerald-600 focus:ring-1 focus:outline-none md:w-80" 
+            type="text" placeholder="ex. Pikachu" onKeyPress={handleKeyPress}/>
       </div>
       <div className="flex flex-col md:items-center mt-4">
         <FrequentSearch title="Favorites"/>
