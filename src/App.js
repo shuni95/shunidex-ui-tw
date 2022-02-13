@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { FrequentSearch } from "./FrequentSearch";
 import { PokedexData } from "./data";
+import { useEffect } from "react";
 
 function App() {
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.getElementsByTagName('html')[0].style['background-color'] = 'whitesmoke';
+  }, [])
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -23,16 +28,15 @@ function App() {
       <div className="flex justify-center">
         <img className="h-[100px] w-[100px]" src="./pokeball.png" alt="Pokeball"/>
       </div>
-      <h1 className="text-4xl text-emerald-700 text-center font-semibold">Shunidex</h1>
+      <h1 className="text-4xl text-[peru] text-center font-semibold">ShuniDex</h1>
       
       <div className="flex justify-center mt-2">
-          <input id="search" className="w-60 placeholder:italic placeholder:text-gray-400 bg-white border-2 rounded border-solid border-emerald-800 p-2 focus:border-emerald-400 focus:ring-emerald-600 focus:ring-1 focus:outline-none md:w-80" 
-            type="text" placeholder="ex. Pikachu" onKeyPress={handleKeyPress}/>
+          <input id="search" className="w-60 placeholder:text-gray-400 bg-white border-2 rounded border-solid border-[peru] p-2 focus:border-[#aa6a2c] focus:ring-[#aa6a2c] focus:ring-1 focus:outline-none md:w-80" 
+            type="text" placeholder="Zorua 🦊" onKeyPress={handleKeyPress}/>
       </div>
       <div className="flex flex-col md:items-center mt-4">
         <FrequentSearch title="Favorites"/>
         <FrequentSearch title="Most wanted"/>
-        <FrequentSearch title="Meta 2v2"/>
         <FrequentSearch title="Cutest"/>
         <FrequentSearch title="Last Gen"/>
       </div>

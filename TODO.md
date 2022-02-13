@@ -21,10 +21,11 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
  - [ ] Zones clickable to show a map where Pokemon spawn
 
 ## In Progress
-- [ ] Change UI index page
- - [ ] Change colors 
+
 
 ## Closed
+- [x] Change UI index page - Peru color chosen &#127477;&#127466; 🇵🇪
+ - [x] Change colors 
 - [x] Search pokemon in Index page
  - [x] Add search handler from index page
  - [x] Validate if the pokemon name is a valid one
