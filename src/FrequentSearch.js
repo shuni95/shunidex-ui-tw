@@ -1,32 +1,60 @@
 import { Component } from "react";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import SearchData from './search.json';
+import PokedexData from './pokedex.json';
 
 function FrequentSearchOn(props) {
+    const [pokemonList, setPokemonList] = useState([])
+
+    useEffect(() => {
+        const names = SearchData[props.title];
+        if (names) {
+            let data = [];
+            names.map(name => data.push(PokedexData[name.toLowerCase()]));
+            setPokemonList(data);
+        }
+    }, [])
+
     return (
         <div className="mx-2 px-2 mt-2">
-            <div className="">
-                <span className="text-[#dba774] text-xl font-bold">
-                    &lt;
+            <div className="flex flex-row">
+                <span>
+                    <button onClick={props.onClick}><img src='/icons/objects/pokeball-open.png' /></button>
                 </span>
-                <span className="ml-2 text-[peru] text-xl font-medium">
-                    <button onClick={props.onClick} className="py-2 px-4 rounded-lg bg-black">{props.emoji} {props.title}</button>                
+                <span className="text-[peru] text-xl font-bold">
+                    <button onClick={props.onClick} className="py-2 px-2 rounded-lg">{props.emoji} {props.title}</button>                
                 </span> 
             </div>
             <div className="mt-2">
-                <p className="border-solid border-2 border-[#dba774] p-4">Hidden content</p>
+                <div className="border-solid border-2 border-[#dba774] p-2">
+                    <ul className='flex flex-row gap-4 justify-center items-end'>
+                    {pokemonList ? pokemonList.map((pokemon, i) => (
+                        <li className='text-center'>
+                            <Link to={'/pkmn/' + pokemon.name.toLowerCase()}>
+                                <img className='w-12' src={pokemon.imageSrc}/>
+                            </Link>
+                            <Link to={'/pkmn/' + pokemon.name.toLowerCase()}>
+                                <span className='text-sm'>{pokemon.name}</span>
+                            </Link>
+                        </li>
+                    )) : ''}
+                    </ul>
+                </div>
             </div>
-        </div>      
+        </div>
     )
 }
 
 function FrequentSearchOff(props) {
     return (
         <div className="mx-2 px-2 mt-2">
-            <div className="">
-                <span className="text-[#dba774] text-xl font-bold">
-                    &gt;
+            <div className="flex flex-row">
+                <span>
+                    <button onClick={props.onClick}><img src='/icons/objects/pokeball-close.png' /></button>
                 </span>
-                <span className="ml-2 text-black text-xl font-medium">
-                    <button onClick={props.onClick} className="py-2 px-4 rounded-lg border-2 border-[peru]">{props.title}</button>                
+                <span className="text-[peru] text-xl font-medium">
+                    <button onClick={props.onClick} className="py-2 px-4 border-2 border-[peru]">{props.title}</button>                
                 </span> 
             </div>
             <div className="mt-2"></div>    

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FrequentSearch } from "./FrequentSearch";
-import { PokedexData } from "./data";
+import PokedexData from "./pokedex.json";
 import { useEffect } from "react";
 
 function App() {
@@ -25,14 +25,14 @@ function App() {
 
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <img className="h-[100px] w-[100px]" src="./pokeball.png" alt="Pokeball"/>
+        <h1 className="text-4xl text-[peru] text-center font-semibold">ShuniDex</h1>
       </div>
-      <h1 className="text-4xl text-[peru] text-center font-semibold">ShuniDex</h1>
       
       <div className="flex justify-center mt-2">
           <input id="search" className="w-60 placeholder:text-gray-400 bg-white border-2 rounded border-solid border-[peru] p-2 focus:border-[#aa6a2c] focus:ring-[#aa6a2c] focus:ring-1 focus:outline-none md:w-80" 
-            type="text" placeholder="Zorua 🦊" onKeyPress={handleKeyPress}/>
+            type="search" placeholder="Zorua 🦊" onKeyPress={handleKeyPress}/>
       </div>
       <div className="flex flex-col md:items-center mt-4">
         <FrequentSearch title="Favorites"/>

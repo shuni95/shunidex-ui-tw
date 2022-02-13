@@ -6,7 +6,7 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
   - [ ] Add most-difficult to capture by Area
 - [ ] Styling Detail page
   - [ ] Change background color according to Pokemon type (ignore normal if it's possible)
-  - [ ] Add Pokemon icon
+  - [ ] Add objects and food icons
 - [ ] Shiny button in Detail page
   - [ ] Animation chaning to Shiny form
   - [ ] Animation returning to normal form
@@ -18,13 +18,13 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
   - [ ] Zones clickable to show a map where Pokemon spawn
 
 ## In Progress
-- [ ] Change UI index page
-  - [ ] Fill sections with pokemon icons and names
-  - [ ] Replace sections if needed
+
 
 ## Closed
-- [x] Change UI index page - Peru color chosen &#127477;&#127466; 🇵🇪
-  - [x] Change colors 
+- [x] Change UI index page - Peru color chosen &#127477;&#127466;
+  - [x] Change colors
+  - [x] Fill sections with pokemon icons and names
+  - [x] Replace sections if needed 
 - [x] Search pokemon in Index page
   - [x] Add search handler from index page
   - [x] Validate if the pokemon name is a valid one

@@ -1,0 +1,95 @@
+{
+    "eevee": {
+        "name": "Eevee",
+        "title": "Pokémon Evolución",
+        "iconSrc": "/icons/EeveeIcon.png", 
+        "imageSrc": "/sprites/Eevee.png",
+        "description": "Puede adoptar distintas formas al evolucionar. Creemos que en él reside la clave para comprender el secreto de la evolución de los Pokémon.",
+        "evolutions": [
+            {
+                "text": "Piedratrueno",
+                "evolution": "Jolteon"
+            },
+            {
+                "text": "Piedra Agua",
+                "evolution": "Vaporeon"
+            },
+            {
+                "text": "Piedra Fuego",
+                "evolution": "Flareon"
+            }
+        ],
+        "locations": [
+            {
+                "section": "🏔 Tundra Alba",
+                "zones": ["Páramo Algente"]
+            }
+        ],
+        "weakAgainst": [
+            "dark"
+        ]
+    },
+    "zorua": {
+        "name": "Zorua",
+        "title": "Pokémon Zorro Rencor",
+        "iconSrc": "/icons/ZoruaIcon.png", 
+        "imageSrc": "/sprites/Zorua.png",
+        "description": "Es un alma difunta resucitada en Hisui que transforma su rencor en energía. Esta surge de su cabeza y adopta la forma de su oponente, disipando asi su inquina.",
+        "evolutions": [
+            {
+                "text": "Lvl 30",
+                "evolution": "zoroark"
+            }
+        ],
+        "types": [
+            "normal",
+            "ghost"
+        ],
+        "items": [
+            "Baya Lupu",
+            "Bonguri Pocho"
+        ],
+        "meals": [
+            ""
+        ],
+        "locations": [
+            {
+                "section": "🏔 Tundra Alba",
+                "zones": ["Páramo Algente"]
+            }
+        ],
+        "strongAgainst": [
+            "ghost",
+            "psychic"
+        ],
+        "weakAgainst": [
+            "dark"
+        ]
+    },
+    "zoroark": {
+        "name": "Zoroark",
+        "title": "Pokémon Maldizorro",
+        "description": "La revuelta melena blanca le hace parecer la personificación de la muerte. Abate a sus rivales sin consideración por su vida valiéndose de un profundo rencor que también daña su cuerpo.",
+        "iconSrc": "/icons/ZoruaIcon.png", 
+        "imageSrc": "/sprites/Zoroark.png",
+        "evolutions": [],
+        "types": [
+            "normal",
+            "ghost"
+        ],
+        "preEvolution": "zorua",
+        "locations": [
+            {
+                "section": "🏔 Tundra Alba",
+                "zones": ["Páramo Algente"]
+            }
+        ],
+        "strongAgainst": [
+            "ghost",
+            "psychic"
+        ],
+        "weakAgainst": [
+            "dark"
+        ]
+    }
+}

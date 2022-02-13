@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { PokedexData } from './data';
+import PokedexData from './pokedex.json';
 import PokemonType from "./PokemonType";
 
 
@@ -42,6 +42,8 @@ function PokemonDetail() {
             // TODO: Change background-color depending on the pokemon type, ignore normal is possible
             document.getElementsByTagName('html')[0].style['background-color'] = 'lavender';
         }
+
+        document.getElementById('papyrus-box').style['height'] = document.getElementById('description').offsetHeight + 20 + 'px';
     }, [pkmn]);
 
 
@@ -69,7 +71,7 @@ function PokemonDetail() {
                         <h1 className="text-3xl font-bold">{ pkmn.name }</h1>
                     </div>
                     <div className="flex relative justify-center items-end mt-2">
-                        <img id="image" className={effect + ' m-auto'} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
+                        <img id="image" className={effect + ' m-auto w-[240px]'} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
                         <div className="flex flex-col space-y-2 w-0">
                         {pkmn.evolutions ? pkmn.evolutions.map((evolution, i) => (
                             <EvolutionButton key={i} onSetEffect={setEffect} text={evolution.text}/>
@@ -79,7 +81,7 @@ function PokemonDetail() {
                         ): ''}
                         </div>
                     </div>
-                    <div className="flex justify-center mt-2">
+                    <div className="flex justify-center mt-2 gap-1">
                         {pkmn.types ? pkmn.types.map((type, i) => (
                             <PokemonType key={i} type={type}/>
                         )): ''}
@@ -89,9 +91,9 @@ function PokemonDetail() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row p-2 pl-4 items-center mb-6">
-                <div style={{filter: 'url(/filter.svg#waves)'}} className='shadow-papyrus absolute h-20 left-[5px] right-[10px] bg-[#faebd7]'></div>
-                <p className="text-xs z-10 font-[Merienda]">«{pkmn.description}»</p>
+            <div className="flex flex-row p-2 pl-4 items-center mt-1 mb-3">
+                <div id='papyrus-box' style={{filter: 'url(/filter.svg#waves)'}} className='shadow-papyrus absolute left-[5px] right-[10px] bg-[#faebd7]'></div>
+                <p id='description' className="text-xs z-10 font-[Merienda] p-1 pr-4">«{pkmn.description}»</p>
             </div>
 
             <div className='flex flex-row mt-2'>
@@ -100,7 +102,7 @@ function PokemonDetail() {
                     <ul className='list-none space-y-2'>
                         {pkmn.locations ? pkmn.locations.map((location, i) => (
                             <li key={i} className='text-sm'>
-                                <span className='font-semibold'>{location.section}</span>: 
+                                <span className='font-semibold'>{location.section}</span>:&nbsp;
                                 <span>{location.zones.join(', ')}</span>
                                 </li>
                         )): ''}
@@ -111,14 +113,18 @@ function PokemonDetail() {
             <div className="flex flex-row mt-2">
                 <div className="flex flex-col basis-1/2 items-center">
                     <h2 className="font-bold mb-2">Fuerte (x2)</h2>
-                    <ul className="list-none">
-                        <li><PokemonType type="ghost"/></li>
+                    <ul className="list-none space-y-2 text-center">
+                        {pkmn.strongAgainst ? pkmn.strongAgainst.map((type, i) => (
+                            <li key={i}><PokemonType type={type}/></li>
+                        )) : ''}
                     </ul>
                 </div>
                 <div className="flex flex-col basis-1/2 items-center">
                     <h2 className="font-bold mb-2">Débil (x2)</h2>
                     <ul className="list-none space-y-2">
-                        <li><PokemonType type='dark'/></li>
+                        {pkmn.weakAgainst ? pkmn.weakAgainst.map((type, i) => (
+                            <li key={i}><PokemonType type={type}/></li>
+                        )) : ''}
                     </ul>
                 </div>
             </div>
