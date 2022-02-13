@@ -23,7 +23,7 @@ function PreEvolutionButton(props) {
     }
 
     return (
-        <button className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm italic" onClick={preEvolutionButtonHandler}>{'<--'}</button>
+        <button className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm" onClick={preEvolutionButtonHandler}>{'🔙'}</button>
     )
 }
 
@@ -33,8 +33,16 @@ function PokemonDetail() {
     const [pkmn, setPkmn] = useState({});
 
     useEffect(() => {
-        setPkmn(PokedexData[params.name]);
+        const pokemonData = PokedexData[params.name];
+        setPkmn(pokemonData);
     }, [])
+
+    useEffect(() => {
+        if (pkmn.types && pkmn.types[1] === 'ghost') {
+            // TODO: Change background-color depending on the pokemon type, ignore normal is possible
+            document.getElementsByTagName('html')[0].style['background-color'] = 'lavender';
+        }
+    }, [pkmn]);
 
 
     const animationEndsHandler = (e) => {
@@ -63,8 +71,8 @@ function PokemonDetail() {
                     <div className="flex relative justify-center items-end mt-2">
                         <img id="image" className={effect + ' m-auto'} src={pkmn.imageSrc} alt={pkmn.name} onAnimationEnd={animationEndsHandler}/>
                         <div className="flex flex-col space-y-2 w-0">
-                        {pkmn.evolutions ? pkmn.evolutions.map(evolution => (
-                            <EvolutionButton onSetEffect={setEffect} text={evolution.text}/>
+                        {pkmn.evolutions ? pkmn.evolutions.map((evolution, i) => (
+                            <EvolutionButton key={i} onSetEffect={setEffect} text={evolution.text}/>
                         )): ''}
                         {pkmn.preEvolution ? (
                             <PreEvolutionButton onSetEffect={setEffect}/>
@@ -72,8 +80,8 @@ function PokemonDetail() {
                         </div>
                     </div>
                     <div className="flex justify-center mt-2">
-                        {pkmn.types ? pkmn.types.map(type => (
-                            <PokemonType type={type}/>
+                        {pkmn.types ? pkmn.types.map((type, i) => (
+                            <PokemonType key={i} type={type}/>
                         )): ''}
                     </div>
                     <div className="flex justify-center mb-2">
@@ -90,8 +98,8 @@ function PokemonDetail() {
                 <div className='flex flex-col pl-4 basis-full'>
                     <h2 className='font-bold mb-2'>Ubicaciones</h2>
                     <ul className='list-none space-y-2'>
-                        {pkmn.locations ? pkmn.locations.map(location => (
-                            <li className='text-sm'>
+                        {pkmn.locations ? pkmn.locations.map((location, i) => (
+                            <li key={i} className='text-sm'>
                                 <span className='font-semibold'>{location.section}</span>: 
                                 <span>{location.zones.join(', ')}</span>
                                 </li>
@@ -119,16 +127,16 @@ function PokemonDetail() {
                 <div className="flex flex-col basis-1/2 items-center">
                     <h2 className="font-bold">Objetos</h2>
                     <ul className="list-none text-center">
-                        {pkmn.items ? pkmn.items.map(item => (
-                            <li className="text-sm">{item}</li>
+                        {pkmn.items ? pkmn.items.map((item, i) => (
+                            <li key={i} className="text-sm">{item}</li>
                         )) : ''}
                     </ul>
                 </div>
                 <div className="flex flex-col basis-1/2 items-center">
                     <h2 className="font-bold">Alimento preferido</h2>
                     <ul className="list-none text-center">
-                        {pkmn.meals ? pkmn.meals.map(item => (
-                            <li className="text-sm">{item}</li>
+                        {pkmn.meals ? pkmn.meals.map((item, i) => (
+                            <li key={i} className="text-sm">{item}</li>
                         )) : ''}
                     </ul>
                 </div>
