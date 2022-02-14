@@ -1,7 +1,9 @@
 # Shunidex
+
 A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of capturing and completing the Pokedex.
 
 ## Open
+
 - [ ] Index page information
   - [ ] Add most-difficult to capture by Area
 - [ ] Styling Detail page
@@ -19,12 +21,12 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
 
 ## In Progress
 
-
 ## Closed
+
 - [x] Change UI index page - Peru color chosen &#127477;&#127466;
   - [x] Change colors
   - [x] Fill sections with pokemon icons and names
-  - [x] Replace sections if needed 
+  - [x] Replace sections if needed
 - [x] Search pokemon in Index page
   - [x] Add search handler from index page
   - [x] Validate if the pokemon name is a valid one
