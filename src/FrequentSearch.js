@@ -62,10 +62,7 @@ function FrequentSearchOff(props) {
           </button>
         </span>
         <span className="text-[peru] text-xl font-medium">
-          <button
-            onClick={props.onClick}
-            className="py-2 px-4 border-2 border-[peru]"
-          >
+          <button onClick={props.onClick} className="py-2 px-4 border-2 border-[peru]">
             {props.title}
           </button>
         </span>
@@ -89,13 +86,9 @@ export class FrequentSearch extends Component {
 
   render() {
     if (this.state.contentVisible) {
-      return (
-        <FrequentSearchOn onClick={this.toggle} title={this.props.title} />
-      );
+      return <FrequentSearchOn onClick={this.toggle} title={this.props.title} />;
     } else {
-      return (
-        <FrequentSearchOff onClick={this.toggle} title={this.props.title} />
-      );
+      return <FrequentSearchOff onClick={this.toggle} title={this.props.title} />;
     }
   }
 }

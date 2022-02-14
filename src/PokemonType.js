@@ -22,10 +22,7 @@ function PokemonType(props) {
 
   return (
     <span
-      className={
-        pokemonType.classes +
-        " p-1 px-3 rounded-3xl leading-6 lowercase text-sm font-['Open_Sans'] italic"
-      }
+      className={pokemonType.classes + " p-1 px-3 rounded-3xl leading-6 lowercase text-sm font-['Open_Sans'] italic"}
     >
       {pokemonType.text}
     </span>

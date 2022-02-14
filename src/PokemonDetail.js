@@ -48,8 +48,7 @@ function PokemonDetail() {
   useEffect(() => {
     if (pkmn.types && pkmn.types[1] === "ghost") {
       // TODO: Change background-color depending on the pokemon type, ignore normal is possible
-      document.getElementsByTagName("html")[0].style["background-color"] =
-        "lavender";
+      document.getElementsByTagName("html")[0].style["background-color"] = "lavender";
     }
 
     document.getElementById("papyrus-box").style["height"] =
@@ -89,24 +88,14 @@ function PokemonDetail() {
             <div className="flex flex-col space-y-2 w-0">
               {pkmn.evolutions
                 ? pkmn.evolutions.map((evolution, i) => (
-                    <EvolutionButton
-                      key={i}
-                      onSetEffect={setEffect}
-                      text={evolution.text}
-                    />
+                    <EvolutionButton key={i} onSetEffect={setEffect} text={evolution.text} />
                   ))
                 : ""}
-              {pkmn.preEvolution ? (
-                <PreEvolutionButton onSetEffect={setEffect} />
-              ) : (
-                ""
-              )}
+              {pkmn.preEvolution ? <PreEvolutionButton onSetEffect={setEffect} /> : ""}
             </div>
           </div>
           <div className="flex justify-center mt-2 gap-1">
-            {pkmn.types
-              ? pkmn.types.map((type, i) => <PokemonType key={i} type={type} />)
-              : ""}
+            {pkmn.types ? pkmn.types.map((type, i) => <PokemonType key={i} type={type} />) : ""}
           </div>
           <div className="flex justify-center mb-2">
             <span className="text-sm italic">{pkmn.title}</span>
