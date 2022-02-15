@@ -7,19 +7,22 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
 - [ ] Index page information
   - [ ] Add most-difficult to capture by Area
 - [ ] Styling Detail page
-  - [ ] Change background color according to Pokemon type (ignore normal if it's possible)
   - [ ] Add objects and food icons
 - [ ] Shiny button in Detail page
   - [ ] Animation chaning to Shiny form
   - [ ] Animation returning to normal form
 - [ ] Complex evolutions
-  - [ ] Add Eevee, can evolves with friendship
   - [ ] Add Scyther, can evolve with items
 - [ ] Location Map
   - [ ] Add library and images needed
   - [ ] Zones clickable to show a map where Pokemon spawn
 
 ## In Progress
+
+- [ ] Styling Detail page
+  - [ ] Change background color according to Pokemon type (ignore normal if it's possible)
+- [ ] Complex evolutions
+  - [ ] Add Eevee, can evolves with friendship
 
 ## Closed
 

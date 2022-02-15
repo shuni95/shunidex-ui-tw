@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PokedexData from "./pokedex.json";
+import PokemonTypeMap from "./pokemonTypeMap.json";
 import PokemonType from "./PokemonType";
 
 function EvolutionButton(props) {
@@ -11,10 +12,10 @@ function EvolutionButton(props) {
 
   return (
     <button
-      className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm italic"
+      className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm"
       onClick={evolutionButtonHandler}
     >
-      {props.text}
+      {props.data.imgSrc ? <img src={props.data.imgSrc} title={props.data.text} /> : props.data.text}
     </button>
   );
 }
@@ -46,9 +47,19 @@ function PokemonDetail() {
   }, []);
 
   useEffect(() => {
-    if (pkmn.types && pkmn.types[1] === "ghost") {
-      // TODO: Change background-color depending on the pokemon type, ignore normal is possible
-      document.getElementsByTagName("html")[0].style["background-color"] = "lavender";
+    if (pkmn.types) {
+      let bgColor;
+      if (pkmn.types.length === 1) {
+        bgColor = PokemonTypeMap[pkmn.types[0]].bgColor;
+      } else {
+        // Use first type, except if it's normal
+        if (pkmn.types[0] !== "normal") {
+          bgColor = PokemonTypeMap[pkmn.types[0]].bgColor;
+        } else {
+          bgColor = PokemonTypeMap[pkmn.types[1]].bgColor;
+        }
+      }
+      document.getElementsByTagName("html")[0].style["background-color"] = bgColor;
     }
 
     document.getElementById("papyrus-box").style["height"] =
@@ -85,10 +96,10 @@ function PokemonDetail() {
               alt={pkmn.name}
               onAnimationEnd={animationEndsHandler}
             />
-            <div className="flex flex-col space-y-2 w-0">
+            <div className="grid grid-cols-[repeat(2,_1fr)] grid-rows-[repeat(3,_1fr)] gap-2 w-0">
               {pkmn.evolutions
                 ? pkmn.evolutions.map((evolution, i) => (
-                    <EvolutionButton key={i} onSetEffect={setEffect} text={evolution.text} />
+                    <EvolutionButton key={i} onSetEffect={setEffect} data={evolution} />
                   ))
                 : ""}
               {pkmn.preEvolution ? <PreEvolutionButton onSetEffect={setEffect} /> : ""}

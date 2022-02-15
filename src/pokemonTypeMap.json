@@ -1,0 +1,90 @@
+{
+  "dark": {
+    "bgColor": "black",
+    "classes": "bg-black text-white",
+    "text": "siniestro"
+  },
+  "psychic": {
+    "bgColor": "palevioletred",
+    "classes": "bg-[#fc46aa] text-white",
+    "text": "psíquico"
+  },
+  "ghost": {
+    "bgColor": "lavender",
+    "classes": "bg-purple-900 text-white",
+    "text": "fantasma"
+  },
+  "normal": {
+    "bgColor": "lightgray",
+    "classes": "bg-gray-500 text-white",
+    "text": "normal"
+  },
+  "steel": {
+    "classes": "bg-gray-500 text-white",
+    "text": "acero"
+  },
+  "fighting": {
+    "classes": "bg-gray-500 text-white",
+    "text": "lucha"
+  },
+  "grass": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "planta"
+  },
+  "water": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "acero"
+  },
+  "fire": {
+    "bgColor": "lightcoral",
+    "classes": "bg-gray-500 text-white",
+    "text": "fuego"
+  },
+  "electric": {
+    "bgColor": "kahki",
+    "classes": "bg-gray-500 text-white",
+    "text": "eléctrico"
+  },
+  "flying": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "volador"
+  },
+  "dragon": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "dragon"
+  },
+  "ice": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "hielo"
+  },
+  "fairy": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "hada"
+  },
+  "poison": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "veneno"
+  },
+  "bug": {
+    "bgColor": "",
+    "classes": "bg-gray-500 text-white",
+    "text": "bicho"
+  },
+  "rock": {
+    "bgColor": "brown",
+    "classes": "bg-gray-500 text-white",
+    "text": "roca"
+  },
+  "ground": {
+    "bgColor": "peru",
+    "classes": "bg-gray-500 text-white",
+    "text": "tierra"
+  }
+}

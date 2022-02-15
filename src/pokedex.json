@@ -8,17 +8,29 @@
     "evolutions": [
       {
         "text": "Piedratrueno",
-        "evolution": "Jolteon"
+        "imgSrc": "/icons/objects/thunder_stone.png",
+        "evolution": "jolteon"
       },
       {
         "text": "Piedra Agua",
-        "evolution": "Vaporeon"
+        "imgSrc": "/icons/objects/water_stone.png",
+        "evolution": "vaporeon"
       },
       {
         "text": "Piedra Fuego",
-        "evolution": "Flareon"
+        "evolution": "flareon",
+        "imgSrc": "/icons/objects/fire_stone.png"
+      },
+      {
+        "text": "💘 + ☀",
+        "evolution": "espeon"
+      },
+      {
+        "text": "💘 + 🌑",
+        "evolution": "umbreon"
       }
     ],
+    "types": ["normal"],
     "locations": [
       {
         "section": "🏔 Tundra Alba",
