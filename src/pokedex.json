@@ -37,7 +37,7 @@
         "zones": ["Páramo Algente"]
       }
     ],
-    "weakAgainst": ["dark"]
+    "weakAgainst": ["fighting"]
   },
   "zorua": {
     "name": "Zorua",
