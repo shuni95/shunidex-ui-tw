@@ -21,6 +21,6 @@ Features that should be done for `1.0.0`:
 
 ## Contact
 
-You can drop me a line in [Telegram](https://t.me/JuniorZavaleta) or [Twitter](https://twitter.com/MonkeyDJuni)
+You can drop me a line in [Telegram](https://t.me/shuni95) or [Twitter](https://twitter.com/MonkeyDJuni)
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
