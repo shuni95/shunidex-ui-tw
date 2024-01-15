@@ -47,3 +47,7 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
   - [x] Add Pokemn types in Detail page
 - [ ] Styling Detailg page
   - [x] Add papyrus style to description in Detail page
+
+## Fixes
+
+- [x] Fix iOS grayscale uses 100% instead of 1
