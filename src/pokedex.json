@@ -39,6 +39,25 @@
     ],
     "weakAgainst": ["fighting"]
   },
+  "vaporeon": {
+    "name": "Vaporeon",
+    "title": "Pokemon Burbuja",
+    "imageSrc": "/sprites/Vaporeon.png",
+    "description": "Según nuestros análisis, su estructura celular es similar a las moléculas de agua, lo que le permite mimetizarse al sumergirse. Tal vez sea el origen de los cuentos de sirenas.",
+    "evolutions": [],
+    "preEvolution": "eevee",
+    "types": ["water"],
+    "items": ["Baya Frambu", "Revibrote"],
+    "meals": [""],
+    "locations": [
+      {
+        "section": "🏔 Costa Cobalto",
+        "zones": ["Distorsión espaciotemporal"]
+      }
+    ],
+    "strongAgainst": ["rock"],
+    "weakAgainst": ["grass", "electric"]
+  },
   "zorua": {
     "name": "Zorua",
     "title": "Pokémon Zorro Rencor",

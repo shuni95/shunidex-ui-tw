@@ -4,42 +4,44 @@ import PokedexData from "./pokedex.json";
 import PokemonTypeMap from "./pokemonTypeMap.json";
 import PokemonType from "./PokemonType";
 
-function EvolutionButton(props) {
-  const evolutionButtonHandler = (e) => {
-    e.preventDefault();
-    props.onSetEffect("animate-evolution");
-  };
-
-  return (
-    <button
-      className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm"
-      onClick={evolutionButtonHandler}
-    >
-      {props.data.imgSrc ? <img src={props.data.imgSrc} title={props.data.text} /> : props.data.text}
-    </button>
-  );
-}
-
-function PreEvolutionButton(props) {
-  const preEvolutionButtonHandler = (e) => {
-    e.preventDefault();
-    props.onSetEffect("animate-preevolution");
-  };
-
-  return (
-    <button
-      className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm"
-      onClick={preEvolutionButtonHandler}
-    >
-      {"🔙"}
-    </button>
-  );
-}
-
 function PokemonDetail() {
   const params = useParams();
   const [effect, setEffect] = useState("");
   const [pkmn, setPkmn] = useState({});
+  const [nextPkmn, setNextPkmn] = useState("");
+
+  function EvolutionButton(props) {
+    const evolutionButtonHandler = (e, evolution) => {
+      e.preventDefault();
+      props.onSetEffect("animate-evolution");
+      setNextPkmn(evolution);
+    };
+
+    return (
+      <button
+        className="bg-red-500 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm"
+        onClick={(e)=> evolutionButtonHandler(e, props.data.evolution)}
+      >
+        {props.data.imgSrc ? <img src={props.data.imgSrc} title={props.data.text} /> : props.data.text}
+      </button>
+    );
+  }
+
+  function PreEvolutionButton(props) {
+    const preEvolutionButtonHandler = (e) => {
+      e.preventDefault();
+      props.onSetEffect("animate-preevolution");
+    };
+
+    return (
+      <button
+        className="bg-gray-600 text-white bg-opacity-75 rounded-lg p-1 relative right-36 bottom-10 w-[50px] shrink-0 text-sm"
+        onClick={preEvolutionButtonHandler}
+      >
+        {"🔙"}
+      </button>
+    );
+  }
 
   useEffect(() => {
     const pokemonData = PokedexData[params.name];
@@ -70,7 +72,7 @@ function PokemonDetail() {
     switch (e.animationName) {
       case "evolution":
         setEffect("animate-appear");
-        setPkmn(PokedexData[pkmn.evolutions[0].evolution]);
+        setPkmn(PokedexData[nextPkmn]);
         break;
       case "appear":
         break;

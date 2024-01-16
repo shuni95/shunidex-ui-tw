@@ -28,14 +28,14 @@
     "text": "lucha"
   },
   "grass": {
-    "bgColor": "",
-    "classes": "bg-gray-500 text-white",
+    "bgColor": "green",
+    "classes": "bg-green-500 text-white",
     "text": "planta"
   },
   "water": {
-    "bgColor": "",
-    "classes": "bg-gray-500 text-white",
-    "text": "acero"
+    "bgColor": "lightcyan",
+    "classes": "bg-[cornflowerblue] text-white",
+    "text": "agua"
   },
   "fire": {
     "bgColor": "lightcoral",
@@ -44,7 +44,7 @@
   },
   "electric": {
     "bgColor": "kahki",
-    "classes": "bg-gray-500 text-white",
+    "classes": "bg-yellow-300",
     "text": "eléctrico"
   },
   "flying": {
@@ -79,12 +79,12 @@
   },
   "rock": {
     "bgColor": "brown",
-    "classes": "bg-gray-500 text-white",
+    "classes": "bg-amber-800 text-white",
     "text": "roca"
   },
   "ground": {
     "bgColor": "peru",
-    "classes": "bg-gray-500 text-white",
+    "classes": "bg-yellow-900 text-white",
     "text": "tierra"
   }
 }
