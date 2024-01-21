@@ -1,6 +1,6 @@
 {
   "dark": {
-    "bgColor": "black",
+    "bgColor": "darkgray",
     "classes": "bg-black text-white",
     "text": "siniestro"
   },

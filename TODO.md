@@ -2,7 +2,7 @@
 
 A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of capturing and completing the Pokedex.
 
-## Open
+### Todo
 
 - [ ] Index page information
   - [ ] Add most-difficult to capture by Area
@@ -16,15 +16,17 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
 - [ ] Location Map
   - [ ] Add library and images needed
   - [ ] Zones clickable to show a map where Pokemon spawn
+- [ ] Aparition conditions
+  - [ ] Icons for weather and time of the day if needed
+- [ ] Rotom Forms
+  - [ ] Types and sprites
 
-## In Progress
+### In Progress
 
 - [ ] Styling Detail page
   - [ ] Change background color according to Pokemon type (ignore normal if it's possible)
-- [ ] Complex evolutions
-  - [ ] Add Eevee, can evolves with friendship
 
-## Closed
+### Done ✓
 
 - [x] Change UI index page - Peru color chosen &#127477;&#127466;
   - [x] Change colors
@@ -47,7 +49,9 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
   - [x] Add Pokemn types in Detail page
 - [ ] Styling Detailg page
   - [x] Add papyrus style to description in Detail page
+- [ ] Complex evolutions
+  - [x] Add Eevee, can evolves with friendship
 
-## Fixes
+### Fixes
 
 - [x] Fix iOS grayscale uses 100% instead of 1

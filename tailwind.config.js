@@ -3,7 +3,7 @@ module.exports = {
   safelist: ["animate-evolution", "animate-appear"],
   theme: {
     fontFamily: {
-      sans: ['"Open Sans"', "sans-serif"],
+      sans: ["Merienda", '"Open Sans"', "sans-serif"],
     },
 
     extend: {

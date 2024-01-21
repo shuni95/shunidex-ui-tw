@@ -21,7 +21,7 @@ function FrequentSearchOn(props) {
       <div className="flex flex-row">
         <span>
           <button onClick={props.onClick}>
-            <img src="/icons/objects/pokeball-open.png" />
+            <img src="/icons/objects/pokeball-open.png" alt="Icono Pokeball abierta"/>
           </button>
         </span>
         <span className="text-[peru] text-xl font-bold">
@@ -37,7 +37,7 @@ function FrequentSearchOn(props) {
               ? pokemonList.map((pokemon, i) => (
                   <li className="text-center">
                     <Link to={"/pkmn/" + pokemon.name.toLowerCase()}>
-                      <img className="w-12" src={pokemon.imageSrc} />
+                      <img className="w-12" src={pokemon.iconSrc} alt={pokemon.name}/>
                     </Link>
                     <Link to={"/pkmn/" + pokemon.name.toLowerCase()}>
                       <span className="text-sm">{pokemon.name}</span>
@@ -58,10 +58,10 @@ function FrequentSearchOff(props) {
       <div className="flex flex-row">
         <span>
           <button onClick={props.onClick}>
-            <img src="/icons/objects/pokeball-close.png" />
+            <img src="/icons/objects/pokeball-close.png" alt="Icono Pokeball cerrada"/>
           </button>
         </span>
-        <span className="text-[peru] text-xl font-medium">
+        <span className="text-[peru] text-xl font-medium font-[Merienda]">
           <button onClick={props.onClick} className="py-2 px-4 border-2 border-[peru]">
             {props.title}
           </button>
