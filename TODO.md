@@ -35,7 +35,8 @@ A beutiful Pokedex for Pokemon Arceus with some data to enjoy the journey of cap
 - [x] Search pokemon in Index page
   - [x] Add search handler from index page
   - [x] Validate if the pokemon name is a valid one
-  - [x] Show error message if the pokemon name does not exists
+  - [x] Show error message if the pokemon name does not exists [REMOVED]
+  - [x] Show suggestions while typing
 - [x] Basic evolution
   - [x] Pokemon Evolution button and animation
   - [x] Pokemon Preevolution button and animation
